@@ -1,17 +1,30 @@
-let particle;
+let particles = [];
 
 function setup() {
   createCanvas(400, 400);
-  particle = new Particle(200,200);
+  // for (let i = 0; i < 100; i++){
+  //   particles.push(new Particle(200, 200));
+  // }
 }
 
 function draw() {
   background(0);
 
-  let gravity = createVector(0, 0.2);
-  particle.applyForce(gravity);
+  for (let i = 0; i < 1; i++){
+    particles.push(new Particle(200, 20));
+  }
 
-  particle.update();
-  particle.edges();
-  particle.show();
+  for (let particle of particles) {
+    let gravity = createVector(0, 0.2);
+    particle.applyForce(gravity);
+    particle.update();
+    // particle.edges();
+    particle.show();
+  }
+
+  for (let i = particles.length-1; i >= 0; i--){
+    if (particles[i].finished()){
+      particles.splice(i, 1);
+    }
+  }
 }
