@@ -8,6 +8,10 @@ class Particle {
     this.lifetime = 255;
   }
 
+  finished (){
+    return (this.lifetime < 0);
+  }
+
   applyForce(force) {
     this.acc.add(force);
   }
@@ -47,9 +51,5 @@ class Particle {
     if (this.finished()){
       fill( 0, 255, 0);
     }
-  }
-
-  finished (){
-    return (this.lifetime < 0);
   }
 }

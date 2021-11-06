@@ -24,7 +24,8 @@ function draw() {
 
   for (let i = particles.length-1; i >= 0; i--){
     if (particles[i].finished()){
-      particles.splice(i, 1);
+      // particles.splice(i, 1);
+      particles.array.splice(i, 1);
     }
   }
 }
