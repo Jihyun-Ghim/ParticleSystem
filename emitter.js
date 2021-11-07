@@ -12,7 +12,7 @@ class Emitter {
 
   update() {
     for (let particle of this.particles) {
-      let gravity = createVector(0, 0.2);
+      let gravity = createVector(random(-1, 1), random(-1, 1));
       particle.applyForce(gravity);
       particle.update();
     }
