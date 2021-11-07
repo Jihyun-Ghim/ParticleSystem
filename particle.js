@@ -5,7 +5,7 @@ class Particle extends p5.Vector {
     this.vel = p5.Vector.random2D();
     this.vel.mult(random(0.5, 2));
     this.acc = createVector(0, 0);
-    this.r = random(1,3);
+    this.r = 8;
     this.lifetime = 255;
   }
 
@@ -26,10 +26,10 @@ class Particle extends p5.Vector {
   }
 
   show() {
-    noStroke();
-    // stroke(255, this.lifetime);
-    // strokeWeight(2);
-    fill(0 , 0, random(100, 255) , this.lifetime);
+    // noStroke();
+    stroke(255, this.lifetime);
+    strokeWeight(2);
+    fill(255, this.lifetime);
 
     ellipse(this.x, this.y, this.r * 2);
   }
